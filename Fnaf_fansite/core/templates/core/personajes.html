@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Personajes</h1>
+
+{% if personajes %}
+    <ul>
+        {% for p in personajes %}
+            <li>
+                <strong>{{ p.nombre }}</strong><br>
+                {{ p.descripcion }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay personajes registrados todavía.</p>
+{% endif %}
+
+{% endblock %}
